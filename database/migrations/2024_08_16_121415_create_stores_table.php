@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->id();
+            $table->string('company_name');
+            $table->string('natural_person')->nullable();
+            $table->string('artificial_person')->nullable();
+            $table->unsignedBigInteger('ruc')->nullable();
+            $table->unsignedBigInteger('dni')->nullable();
+            $table->text('address')->nullable();
+            $table->integer('retention_agent')->default(0)->nullable();
             $table->timestamps();
         });
     }

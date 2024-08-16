@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('trademark_provider', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('trademark_id')->constrained()->onDelete('cascade');
+            $table->foreignId('provider_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

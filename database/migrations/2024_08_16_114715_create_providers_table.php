@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('providers', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('account_id')->nullable()->constrained()->onDelete('cascade');
+            $table->string('name');
+            $table->unsignedBigInteger('ruc');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
