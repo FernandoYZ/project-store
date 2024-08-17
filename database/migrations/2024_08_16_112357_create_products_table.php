@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('unit_measurement')->nullable();
             $table->string('image')->nullable();
             $table->string('ubication')->nullable();
-            $table->integer('status')->default(1);
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
